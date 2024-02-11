@@ -1,0 +1,46 @@
+---
+interface Props {
+	title: string;
+	body: string;
+    imglink: string;
+    price: string;
+    rating
+}
+
+const {  title, body ,imglink , price , rating} = Astro.props;
+---
+
+
+
+
+
+<figure class="dark:bg-zinc-800 rounded-3xl overflow-hidden shadow-2xl dark:bg-gray-700">
+    <div class="bg-white rounded-t-3xl overflow-hidden">
+        <img
+            class="w-full h-72 object-contain"
+            src={imglink}
+            alt=""
+        />
+    </div>
+    <div class="p-6">
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold text-white">
+                <span class="hover:underline">{title}</span>
+            </h3>
+            <p class="text-sm text-gray-400">{body}</p>
+        </div>
+        <div class="flex justify-between items-center">
+            <div>
+                <p class="text-base text-tomato-500 text-white">
+                    <span class="mr-1">&#9733;</span>{rating}
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold text-tomato-500 text-white">
+                    Rs {price}
+                </p>
+            </div>
+        </div>
+    </div>
+</figure>
+
